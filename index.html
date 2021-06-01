@@ -9,9 +9,20 @@
 		<title>Landed by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!-- bootstrap -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- bootstrap -->
 	</head>
+	
 	<body class="is-preload landing">
 		<div id="page-wrapper">
 
@@ -102,7 +113,7 @@
 					<p>We also used other existing lyrics APIs since MusixMatch only shows 30% of a song’s lyrics. For those songs whose lyrics are not found in other APIs, we just used the 30% of the lyrics provided by MusixMatch.</p>
 
 					<ul class="actions">
-						<li><a href="#" class="button" style="height:auto; line-height: 1.5em; padding-top:1em; padding-bottom: 1em;">learn more about <br>the data collection process</a></li>
+						<li><button type="button" class='button btn'  data-toggle="modal" data-target="#data_collection_modal" style="height:auto; line-height: 1.5em; padding-top:1em; padding-bottom: 1em;">learn more about <br>the data collection process</button></li>
 					</ul>
 				</div>
 				<a href="#three" class="goto-next scrolly">Next</a>
@@ -221,6 +232,30 @@
 				</footer>
 
 		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="data_collection_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			  <div class="modal-content">
+				<header>
+					<h2 style="padding-top:1em; padding-left:1em">Data Collection</h2>
+				</header>
+				<div class="modal-body">
+				  <p>We discovered the MusixMatch API which we found useful for the purpose of this project. We got the list of music genres from the MusixMatch API. The sub-genres and other irrelevant genres (e.g. instrumental music, K-pop) were filtered out since we will be working on Tagalog songs. However, MusixMatch API has its limitations for the free version</p>
+				  
+				  <ol>
+					  <li>Users are only allowed to fetch 100 songs at a time</li>
+					  <li>Only the first 30% of the lyrics were provided</li>
+				  </ol>
+
+				  <p>Given those, we set our goal to get at least 200 songs from every genre. We minimized the number of API requests by attempting to fetch the top 201-300 songs of every genre first before retrieving the top 1-100 and 101-200 to check if it has a sufficient number of songs. If the request for the top 201-300 songs returns empty, then we will move and check a different genre. To get the full version of song lyrics, we used other existing APIs for lyrics which were Genius, AZLyrics and MetroLyrics. We opted and set the code to randomize the order of the use of the three APIs for the sending of requests so that it’s not heavy on just one API. </p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="button" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
