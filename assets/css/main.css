@@ -3298,7 +3298,7 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		.wrapper.fade > .container {
+		.wrapper.template-fade > .container {
 			-moz-transition: opacity 1s ease;
 			-webkit-transition: opacity 1s ease;
 			-ms-transition: opacity 1s ease;
