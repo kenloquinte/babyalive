@@ -89,7 +89,7 @@ input, select, textarea {
 	}
 
 	html, body {
-		background: #1c1d26;
+		background: #03031C;
 	}
 
 	body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3093,7 +3093,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
 			-ms-transition: -ms-transform 1s ease, opacity 1s ease;
 			transition: transform 1s ease, opacity 1s ease;
-			background: rgba(23, 24, 32, 0.95);
+			background: #10103B;
 			border-style: solid;
 			opacity: 1;
 			position: absolute;
